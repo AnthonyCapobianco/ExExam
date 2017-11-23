@@ -26,44 +26,44 @@ entree.
 #include <stdio.h>
 int estBisextile(unsigned int annee)
 {
-	return ((annee %4 == 0 && annee %100 != 0)||(annee %400 == 0))? 1:0;
+    return ((annee %4 == 0 && annee %100 != 0)||(annee %400 == 0))? 1:0;
 }
 void askAnnee(unsigned int choice){
 	unsigned int	 min = 0
-					,max = 2017
-					,it;
+			,max = 2017
+			,it;
 	printf("\n Veuillez introduire l'année de départ:");
 	scanf("%u", &min);
 	printf("\n Veuillez introduire l'année de fin:");
 	scanf("%u", &max);
 
 	for (it = min; it <= max; ++it) {
-		switch(choice) {
-			case 1:
-				//bisextile
-				if (estBisextile(it) == 1)
-				{
-					printf("%u\n", it );
-				}
-				break;
-			case 2:
-				//non bisextile
-				if (estBisextile(it) == 0)
-					{
-						printf("%u\n", it );
-					}
-				break;
-			case 3:
-				//toutes plus une marque pour les bisextiles
-				if (estBisextile(it) == 0)
-					{
-						printf("%u\n", it );
-					}
-				else
-					{
-						printf("-%u-\n", it);
-					}
-				break;
+	    switch(choice) {
+		    case 1:
+			    //bisextile
+			    if (estBisextile(it) == 1)
+			    {
+				printf("%u\n", it );
+			    }
+			    break;
+		    case 2:
+			    //non bisextile
+			    if (estBisextile(it) == 0)
+			    {
+				printf("%u\n", it );
+			    }
+			    break;
+		    case 3:
+			    //toutes plus une marque pour les bisextiles
+			    if (estBisextile(it) == 0)
+			    {
+				printf("%u\n", it );
+			    }
+			    else
+			    {
+				printf("-%u-\n", it);
+			    }
+			    break;
 		}
 	}
 }
@@ -75,17 +75,17 @@ int main(int argc, const char * argv[]) {
 		scanf("%u", &choix);
 		switch(choix)
 		{
-			case 1:
-			case 2:
-			case 3:
-				askAnnee(choix);
-				break;
-			case 0:
-				printf("Aurevoir.\n");
-				return 0;
-			default:
-				printf("%u n'est pas un choix correcte.", choix);
-				break;
+		    case 1:
+		    case 2:
+		    case 3:
+			askAnnee(choix);
+			break;
+		    case 0:
+			printf("Aurevoir.\n");
+			return 0;
+		    default:
+			printf("%u n'est pas un choix correcte.", choix);
+			break;
 		}
 
 	}while(choix != 0);
