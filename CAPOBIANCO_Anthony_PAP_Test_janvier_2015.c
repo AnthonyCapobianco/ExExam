@@ -73,12 +73,12 @@
  */
 
 int estBisextile(unsigned int annee){
-    return ((annee %4 == 0 && annee %100 != 0)||(annee %400 == 0))? 1:0;
+    return ((annee %4 == 0 && annee %100 != 0)||(annee %400 == 0)) ? 1:0;
 }
 void askAnnee(unsigned int choice){
     unsigned int     min = 0
-		    ,max = 2017
-		    ,it;
+		            ,max = 2017
+		            ,it;
     do
     {
         printf("Veuillez introduire l'année de départ (minimum 1583) :");
@@ -90,32 +90,33 @@ void askAnnee(unsigned int choice){
 
     }while (min < 1583); // 1583 est le début du calendrier gregorien (merci Wendy)
 
-    printf("\n Veuillez introduire l'année de fin:");
+    printf("Veuillez introduire l'année de fin:");
     scanf("%u", &max);
 
-    for (it = min; it <= max; ++it) {
+    for (it = min; it <= max; ++it)
+    {
         switch(choice)
         {
             case 1:
-            //bisextile
-            if (estBisextile(it) == 1)
-                printf("%u\n", it );
-            break;
+                //bisextile
+                if (estBisextile(it) == 1)
+                    printf("%u\n", it );
+                break;
             case 2:
-            //non bisextile
-            if (estBisextile(it) == 0)
-                printf("%u\n", it );
-            break;
+                //non bisextile
+                if (estBisextile(it) == 0)
+                    printf("%u\n", it );
+                break;
             case 3:
-            //toutes plus une marque pour les bisextiles
-            if (estBisextile(it) == 0)
-                printf("%u\n", it );
-            else
-                printf("%u *\n", it);
-            break;
-        }
-    }
-}
+                //toutes plus une marque pour les bisextiles
+                if (estBisextile(it) == 0)
+                    printf("%u\n", it );
+                else
+                    printf("%u *\n", it);
+                break;
+        }// Switch
+    }// for
+}// askAnnee();
 int main(int argc, const char * argv[]) {
     unsigned int    choix = -1;
     do
