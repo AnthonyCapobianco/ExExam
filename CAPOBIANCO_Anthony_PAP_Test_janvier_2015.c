@@ -75,7 +75,7 @@
 int estBisextile(unsigned int annee){
     return ((annee %4 == 0 && annee %100 != 0)||(annee %400 == 0)) ? 1:0;
 }
-void askAnnee(unsigned int choice){
+void askAnnee(unsigned int *choix){
     unsigned int     min = 0
                     ,max = 2017
                     ,it;
@@ -95,7 +95,7 @@ void askAnnee(unsigned int choice){
 
     for (it = min; it <= max; ++it)
     {
-        switch(choice)
+        switch(*choix)
         {
             case 1:
                 //bisextile
@@ -117,7 +117,7 @@ void askAnnee(unsigned int choice){
         }// Switch
     }// for
 }// askAnnee();
-int main(int argc, const char * argv[]) {
+int main() {
     unsigned int    choix = -1;
     do
         {
@@ -134,7 +134,7 @@ int main(int argc, const char * argv[]) {
                 case 1:
                 case 2:
                 case 3:
-                    askAnnee(choix);
+                    askAnnee(&choix);
                 break;
                 case 0:
                     printf("Aurevoir.\n");
