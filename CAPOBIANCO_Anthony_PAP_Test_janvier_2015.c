@@ -81,11 +81,11 @@ void askAnnee(unsigned int choice){
 		    ,it;
     do
     {
-        printf("\n Veuillez introduire l'année de départ (minimum 1583) :");
+        printf("Veuillez introduire l'année de départ (minimum 1583) :");
         scanf("%u", &min);
         if (min < 1583 && min != 0)
         {
-            printf("La date doit faire partie du calendrier gregorien.");
+            printf("La date doit faire partie du calendrier gregorien.\n");
         }
 
     }while (min < 1583); // 1583 est le début du calendrier gregorien (merci Wendy)
