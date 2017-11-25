@@ -77,8 +77,8 @@ int estBisextile(unsigned int annee){
 }
 void askAnnee(unsigned int choice){
     unsigned int     min = 0
-		            ,max = 2017
-		            ,it;
+                    ,max = 2017
+                    ,it;
     do
     {
         printf("Veuillez introduire l'année de départ (minimum 1583) :");
